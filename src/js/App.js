@@ -17,15 +17,6 @@ class App {
             canvas.style.width = '100%';
         }
         canvas.setAttribute('contenteditable', 'true');
-        canvas.addEventListener('drop', (e) => {
-            e.preventDefault();
-            if (!e.dataTransfer.files || !e.dataTransfer.files[0]) return;
-            const binaryFile = e.dataTransfer.files[0];
-            this.loadRom(binaryFile).then(() => {
-                this.stop();
-                this.start();
-            });
-        });
         this.canvas = canvas;
         this.gbaninja = gbaninja;
         this.vbaGraphics = null;
@@ -110,12 +101,12 @@ class App {
 
     soundResume() {
         this.music = true;
-        this.vbaSound.resume();
+        return this.vbaSound.resume();
     }
 
     soundPause() {
         this.music = false;
-        this.vbaSound.pause();
+        return this.vbaSound.pause();
     }
 
     doTimestep(frameNum, mustRender) {

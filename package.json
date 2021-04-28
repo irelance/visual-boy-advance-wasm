@@ -1,6 +1,6 @@
 {
   "name": "visual-boy-advance-wasm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "wasm port of VisualBoyAdvance",
   "main": "src/js/index.js",
   "scripts": {

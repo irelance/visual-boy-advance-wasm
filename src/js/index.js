@@ -1,7 +1,6 @@
 import App from './App';
 
 const gbaninja = require("../../build/emu.js")();
-console.log(gbaninja.then(a => console.log(a)))
 const deps = {
     app: null,
 };
